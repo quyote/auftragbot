@@ -15,14 +15,14 @@ jobs:
 
       - name: Abhängigkeiten installieren
         run: |
-          pip install buildozer cython
+          pip install buildozer cython setuptools
           sudo apt-get install -y git zip unzip openjdk-17-jdk
 
       - name: APK bauen
         run: buildozer android debug
 
       - name: APK hochladen
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: AuftragBot
           path: bin/*.apk
